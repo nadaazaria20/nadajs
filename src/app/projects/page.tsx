@@ -1,30 +1,42 @@
-export default function ProjectsPage() {
-  return <div>Projects Saya kali ini yaitu membuat website portofolio menggunakan NEXT.JS</div>;
-const projects = [
-  {
-    id: 1,
-    title: "Proyek Karya 1",
-    description: "Deskripsi singkat dari proyek karya 1.",
-    image: "/karya1.jpg",
-  },
-  {
-    id: 2,
-    title: "Proyek Karya 2",
-    description: "Deskripsi singkat dari proyek karya 2.",
-    image: "/karya2.jpg",
-  },
-  {
-    id: 3,
-    title: "Proyek PKN",
-    description: "Deskripsi singkat dari proyek PKN.",
-    image: "/pkn.jpg",
-  },
-  {
-    id: 4,
-    title: "Proyek SB",
-    description: "Deskripsi singkat dari proyek SB.",
-    image: "/sb.jpg",
-  },
-];
+import projekuh from "../data/page";
+import Image from "next/image";
 
+export default function ProjectsPage() {
+  return (
+    <section className="container mx-auto px-4 py-12">
+      <h2 className="text-3xl font-bold text-center mb-8 text-red-600">
+        My Projects
+      </h2>
+
+      <div className="space-y-8">
+        {projekuh.map((project) => (
+          <div
+            key={project.id}
+            className="flex flex-col md:flex-row items-center bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition p-6 gap-6"
+          >
+            {/* Gambar */}
+            <div className="w-full md:w-1/3">
+              <Image
+                src={project.image}
+                alt={project.name}
+                width={400}
+                height={250}
+                className="rounded-lg object-cover"
+              />
+            </div>
+
+            {/* Keterangan */}
+            <div className="w-full md:w-2/3">
+              <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                {project.description}
+              </p>
+              <div className="flex gap-4">
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }

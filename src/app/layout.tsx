@@ -14,9 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body>
+      <body className="font-sans bg-navy text-cream min-h-screen flex flex-col">
         <Navbar />
-        <main className="container">{children}</main>
+        <main className="flex-1 flex items-center justify-center text-center px-4">
+          <div className="max-w-4xl w-full">{children}</div>
+        </main>
         <Footer />
       </body>
     </html>

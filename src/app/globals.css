@@ -1,299 +1,35 @@
 @import "tailwindcss";
 
-/* Reset & base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Variabel warna */
+
+:root {
+    --background: #f7f7bb;
+    --foreground: #171717;
 }
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    /* Kalau tidak pakai Geist, bisa fallback ke Arial */
+    --font-sans: Arial, Helvetica, sans-serif;
+    --font-mono: "Courier New", monospace;
+}
+
+
+/* Dark mode otomatis */
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}
+
+
+/* Style dasar body */
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #436180; /* navy */
-  color: #f5f5dc; /* cream */
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-a {
-  color: #f5f5dc;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-nav {
-  background-color: #000000; /* hitam */
-  padding: 1rem 0;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
-nav ul li a {
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-
-footer {
-  background-color: #000000;
-  color: #f5f5dc;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: auto;
-  font-size: 0.9rem;
-}
-
-/* Buttons */
-.btn {
-  background-color: #f5f5dc;
-  color: #001f3f;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-  margin-top: 1rem;
-  display: inline-block;
-}
-
-.btn:hover {
-  background-color: #ddd6b8;
-}
-
-/* Home Page */
-.home-profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.home-profile img {
-  border-radius: 50%;
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border: 3px solid #f5f5dc;
-}
-
-.home-profile h1 {
-  margin-top: 1rem;
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-.home-profile p {
-  font-size: 1.2rem;
-  margin-top: 0.3rem;
-  font-style: italic;
-  color: #ddd6b8;
-}
-
-.home-buttons {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-/* About Page */
-.about-container {
-  margin-top: 2rem;
-  background-color: #000000;
-  padding: 1.5rem;
-  border-radius: 8px;
-  color: #f5f5dc;
-}
-
-.about-container h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  text-align: center;
-}
-
-.about-container p {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-
-/* Projects Page */
-.projects-list {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.project-item {
-  display: flex;
-  gap: 1.5rem;
-  background-color: #000000;
-  padding: 1rem;
-  border-radius: 8px;
-  align-items: center;
-}
-
-.project-item img {
-  width: 180px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 2px solid #f5f5dc;
-}
-
-.project-info {
-  flex: 1;
-  color: #f5f5dc;
-}
-
-.project-info h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-}
-
-.project-info p {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: #ddd6b8;
-}
-
-.project-links a {
-  margin-right: 1rem;
-  font-weight: 600;
-  color: #f5f5dc;
-  border: 1.5px solid #f5f5dc;
-  padding: 0.3rem 0.7rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.project-links a:hover {
-  background-color: #ddd6b8;
-  color: #001f3f;
-}
-
-/* Skills Page */
-.skills-list {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.skill-item {
-  background-color: #000000;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100px;
-  color: #f5f5dc;
-  cursor: default;
-  transition: background-color 0.3s ease;
-}
-
-.skill-item:hover {
-  background-color: #ddd6b8;
-  color: #001f3f;
-}
-
-.skill-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Contact Page */
-.contact-container {
-  margin-top: 2rem;
-  background-color: #000000;
-  padding: 1.5rem;
-  border-radius: 8px;
-  color: #f5f5dc;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.contact-container h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact-form label {
-  font-weight: 600;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.5rem;
-  border-radius: 4px;
-  border: none;
-  font-size: 1rem;
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.contact-form button {
-  width: 100%;
-  background-color: #f5f5dc;
-  color: #001f3f;
-  border: none;
-  padding: 0.7rem;
-  font-weight: 700;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-  background-color: #ddd6b8;
-}
-
-.social-links {
-  margin-top: 1rem;
-  text-align: center;
-}
-
-.social-links a {
-  margin: 0 0.8rem;
-  font-weight: 600;
-  color: #f5f5dc;
-  border: 1.5px solid #f5f5dc;
-  padding: 0.3rem 0.7rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.social-links a:hover {
-  background-color: #ddd6b8;
-  color: #001f3f;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
 }

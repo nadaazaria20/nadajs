@@ -1,39 +1,23 @@
 
 
-export default function About() {
+const About: React.FC = () => {
   return (
-    <section className="about-container">
-      <h2 >ABOUT ME</h2>
-      <p>
-        <strong>NAMA LENGKAP:</strong> QOTHRUNNADA BELLA AZARIA
-      </p>
-      <p>
-        <strong>NAMA PANGGILAN:</strong> NADA
-      </p>
-      <p>
-        <strong>SEKOLAH:</strong>SMKN 8 MALANG
-      </p>
-      <p>
-        <strong>JURUSAN:</strong>REKAYASA PERANGKAT LUNAK
-      </p>
-      <p>
-        <strong>KELAS:</strong> XI RPL B
-      </p>
-      <p>
-        <strong>TANGGAL LAHIR:</strong> 20 Juni 2009
-      </p>
-      <p>
-        Saya sangat termotivasi untuk belajar coding karena saya ingin
-        menciptakan solusi digital yang bermanfaat dan mengembangkan kreativitas
-        saya dalam dunia teknologi. Saya percaya bahwa kemampuan coding akan
-        membuka banyak peluang di masa depan.
-
-       <p> 1. Karir dan Pekerjaan: Banyak orang belajar coding untuk meningkatkan peluang karir dan mendapatkan pekerjaan yang lebih baik di bidang teknologi.</p>
-<p>2. Kreativitas dan Inovasi: Coding memungkinkan orang untuk menciptakan sesuatu yang baru dan inovatif, seperti aplikasi, game, atau website.</p>
-<p>3. Pemecahan Masalah: Coding membantu orang untuk memecahkan masalah yang kompleks dan meningkatkan kemampuan analitis.</p>
-<p>4. Pengembangan Diri: Belajar coding dapat meningkatkan kemampuan logis, kritis, dan analitis, serta membantu orang untuk menjadi lebih mandiri dan percaya diri.</p>
-<p>5. Membuat Perbedaan: Beberapa orang belajar coding untuk membuat perbedaan dalam masyarakat, seperti menciptakan aplikasi untuk membantu orang dengan disabilitas atau mengembangkan sistem untuk meningkatkan efisiensi dalam suatu organisasi.</p>
-      </p>
-    </section>
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 dark:text-white">
+      <main className="container mx-auto px-6 py-12 max-w-3xl flex-grow">
+        <h2 className="text-3xl font-bold mb-6 text-center">About Me</h2>
+        <p><strong>Nama Lengkap:</strong> QOTHRUNNADA BELLA AZARIA</p>
+        <p><strong>Sekolah:</strong> SMKN 8 MALANG</p>
+        <p><strong>Jurusan:</strong> Rekayasa Perangkat Lunak</p>
+        <p><strong>Kelas:</strong> XI RPL B</p>
+        <p><strong>Tanggal Lahir:</strong> 20 Juni 2009</p>
+        <p className="mt-4">
+          Saya sangat termotivasi untuk belajar coding karena saya ingin
+          menciptakan solusi digital yang bermanfaat dan mengembangkan kreativitas
+          saya dalam dunia teknologi.
+        </p>
+      </main>
+    </div>
   );
-}
+};
+
+export default About;
