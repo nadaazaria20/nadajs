@@ -1,7 +1,40 @@
-import projekuh from "../data/page";
+// src/app/projects/page.tsx
 import Image from "next/image";
 
+// Data langsung di dalam component
+const projekuh = [
+  {
+    id: 1,
+    name: "TUGAS SENIBUDAYA",
+    description: "Tugas mapel senibudaya dibuat menggunakan canva",
+    image: "/sb.jpg",
+  },
+  {
+    id: 2,
+    name: "TUGAS PPKN",
+    description: "Tugas membuat poster ppkn dan dibuat menggunakan canva",
+    image: "/pkn.jpg",
+  },
+  {
+    id: 3,
+    name: "POSTER VOELTURA",
+    description: "Poster yang didesain menggunakan canva.",
+    image: "/karya1.jpg",
+  },
+];
+
 export default function ProjectsPage() {
+  // Pastikan projekuh ada dan merupakan array
+  if (!projekuh || !Array.isArray(projekuh)) {
+    return (
+      <section className="container mx-auto px-4 py-12">
+        <div className="text-center text-red-500">
+          Data projects tidak ditemukan
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="container mx-auto px-4 py-12">
       <h2 className="text-3xl font-bold text-center mb-8 text-red-600">
@@ -31,8 +64,6 @@ export default function ProjectsPage() {
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 {project.description}
               </p>
-              <div className="flex gap-4">
-              </div>
             </div>
           </div>
         ))}
