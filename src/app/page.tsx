@@ -83,7 +83,7 @@ export default function Home() {
             
             <Link 
               href="/projects" 
-              className="group relative overflow-hidden px-8 py-4 bg-transparent text-white border-2 border-white rounded-full font-semibold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-500 hover:bg-white/10 inline-flex items-center justify-center min-w-[160px]"
+              className="group relative overflow-hidden px-8 py-4 bg-transparent text-white border-2 border-white rounded-full font-semibold shadow-2xl hovert                                                                              :shadow-3xl transform hover:scale-105 transition-all duration-500 hover:bg-white/10 inline-flex items-center justify-center min-w-[160px]"
             >
               <span className="relative z-10 flex items-center gap-2">
                  PROJECTS

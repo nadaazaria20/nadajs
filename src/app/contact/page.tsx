@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
       <main className="w-full max-w-2xl bg-white/90 dark:bg-gray-900/90 rounded-xl shadow-lg p-8 backdrop-blur-sm relative z-10">
         <h2 className="text-3xl font-extrabold text-center text-navy dark:text-white mb-4">Contact Me</h2>
         <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
-          I'd love to hear from you! Fill out the form below or connect with me on social media 🌟
+          Id love to hear from you! Fill out the form below or connect with me on social media 🌟
         </p>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">

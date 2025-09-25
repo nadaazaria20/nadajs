@@ -24,7 +24,7 @@ const Skills: React.FC = () => {
       {/* Overlay untuk meningkatkan readability */}
       <div className="absolute inset-0 bg-black/30 dark:bg-black/50"></div>
       
-      <main className="container mx-auto px-6 py-12 max-w-4xl flex-grow relative z-10">
+      <main className="container px-6 py-12 max-w-4xl flex-grow relative z-10">
         <h2 className="text-3xl font-bold mb-8 text-center text-white">MY SKILLS</h2>
         <div className="flex flex-wrap justify-center gap-8">
           {skills.map(({ id, name, icon }) => (
