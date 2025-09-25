@@ -1,4 +1,3 @@
-
 import SkillItem from "../components/SkillItem";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs } from "react-icons/fa";
 
@@ -12,10 +11,21 @@ const skills = [
 
 const Skills: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-white">
+    <div 
+      className="flex flex-col min-h-screen dark:text-white relative"
+      style={{
+        backgroundImage: "url('/wallpaper.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+        backgroundRepeat: "no-repeat"
+      }}
+    >
+      {/* Overlay untuk meningkatkan readability */}
+      <div className="absolute inset-0 bg-black/30 dark:bg-black/50"></div>
       
-      <main className="container mx-auto px-6 py-12 max-w-4xl flex-grow">
-        <h2 className="text-3xl font-bold mb-8 text-center">MY SKILLS</h2>
+      <main className="container mx-auto px-6 py-12 max-w-4xl flex-grow relative z-10">
+        <h2 className="text-3xl font-bold mb-8 text-center text-white">MY SKILLS</h2>
         <div className="flex flex-wrap justify-center gap-8">
           {skills.map(({ id, name, icon }) => (
             <SkillItem key={id} name={name} icon={icon} />

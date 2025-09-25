@@ -1,35 +1,58 @@
 @import "tailwindcss";
 
-/* Variabel warna */
-
 :root {
-    --background: #f7f7bb;
-    --foreground: #171717;
+  --background: #f0dfe1;
+  --foreground: #171717;
 }
-
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    /* Kalau tidak pakai Geist, bisa fallback ke Arial */
-    --font-sans: Arial, Helvetica, sans-serif;
-    --font-mono: "Courier New", monospace;
-}
-
-
-/* Dark mode otomatis */
 
 @media (prefers-color-scheme: dark) {
-     :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+  :root {
+    --background: #0a0a0a;
+    --foreground: #f7d7de;
+  }
 }
 
-
-/* Style dasar body */
-
 body {
-    background-color: var(--background);
-    color: var(--foreground);
-    font-family: var(--font-sans);
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Smooth transitions for dark mode */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Dark mode scrollbar */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: #1f2937;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+  }
 }

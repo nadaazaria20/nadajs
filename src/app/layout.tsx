@@ -14,10 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className="font-sans bg-navy text-cream min-h-screen flex flex-col">
+      <body className="font-sans bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-1 flex items-center justify-center text-center px-4">
-          <div className="max-w-4xl w-full">{children}</div>
+        {/* Tambahkan padding-top untuk menghindari ketutupan navbar */}
+        <main className="flex-1 pt-20"> {/* pt-20 = 5rem (80px) */}
+          {children}
         </main>
         <Footer />
       </body>
