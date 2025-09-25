@@ -7,12 +7,12 @@ const About: React.FC = () => {
         style={{ backgroundImage: "url('/wallpaper.jpg')" }}
       ></div>
 
-      {/* HEADER HITAM */}
+      
       <header className="relative z-20 bg-black text-white py-6 shadow-md">
         <h1 className="text-4xl font-extrabold text-center">About Me</h1>
       </header>
 
-      {/* KONTEN */}
+    
       <main className="relative z-10 bg-black/60 text-white flex-grow">
         <div className="container mx-auto px-6 py-12 max-w-3xl">
           <div className="space-y-3">
