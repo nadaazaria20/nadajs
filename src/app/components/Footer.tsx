@@ -1,4 +1,7 @@
-import { CACHE_ONE_YEAR } from "next/dist/lib/constants";
+// If CACHE_ONE_YEAR is not used, simply remove it
+// If you need it later, add eslint disable comment temporarily:
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// const CACHE_ONE_YEAR = 31536000;
 
 export default function Footer() {
   return (
