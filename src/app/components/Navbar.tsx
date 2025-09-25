@@ -5,46 +5,36 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const Navbar: React.FC = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [dark, setDark] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    // Check initial theme
-    const checkTheme = () => {
-      const savedTheme = localStorage.getItem('theme');
-      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      
-      if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-        setIsDark(true);
-        document.documentElement.classList.add('dark');
-      } else {
-        setIsDark(false);
-        document.documentElement.classList.remove('dark');
-      }
-    };
-
-    checkTheme();
-
-    // Scroll handler
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
+
+    // Set initial dark mode based on system preference
+    const isDark = localStorage.getItem('darkMode') === 'true' || 
+                  (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    setDark(isDark);
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    }
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleDarkMode = () => {
-    const newDarkMode = !isDark;
-    setIsDark(newDarkMode);
+    const newDarkMode = !dark;
+    setDark(newDarkMode);
+    localStorage.setItem('darkMode', newDarkMode.toString());
     
     if (newDarkMode) {
       document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
     }
   };
 
@@ -75,19 +65,20 @@ const Navbar: React.FC = () => {
                     : 'text-gray-800 dark:text-gray-300 hover:text-black dark:hover:text-gray-100'
                 }`}
               >
-                {item.name}
+                {item.name.toUpperCase()}
                 <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-black dark:bg-gray-100 group-hover:w-full transition-all duration-300 ${
                   pathname === item.href ? 'w-full' : ''
                 }`}></span>
               </Link>
             ))}
             
+            {/* Dark Mode Toggle */}
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300 transform hover:scale-110 text-gray-800 dark:text-gray-200"
               aria-label="Toggle dark mode"
             >
-              {isDark ? "☀️" : "🌙"}
+              {dark ? "☀" : "🌙"}
             </button>
           </div>
         </div>

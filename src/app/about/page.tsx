@@ -1,14 +1,11 @@
 const About: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col relative bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 pt-20"> {/* Tambahkan pt-20 */}
+    <div className="min-h-screen flex flex-col relative bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 pt-20">
       {/* Enhanced Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-20 bg-fixed"
-        style={{ backgroundImage: "url('/wallpaper.jpg')" }}
-      ></div>
+      
 
-      {/* Header yang tidak ketutupan */}
-      <header className="relative z-20 bg-black/80 backdrop-blur-md text-white py-8 shadow-2xl border-b-2 border-pink-500/50 mt-20"> {/* Tambahkan mt-20 */}
+      {/* Header */}
+      <header className="relative z-20 bg-black/80 backdrop-blur-md text-white py-8 shadow-2xl border-b-2 border-pink-500/50 mt-20">
         <h1 className="text-4xl md:text-5xl font-extrabold text-center bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
           About Me
         </h1>

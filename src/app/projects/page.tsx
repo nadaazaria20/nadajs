@@ -47,7 +47,7 @@ export default function ProjectsPage() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden pt-20">
+    <div className="min-h-screen flex flex-col relative overflow-hidden pt-20">
       {/* Background dengan wallpaper.jpg */}
       <div className="absolute inset-0">
         <Image
